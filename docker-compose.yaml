@@ -11,8 +11,8 @@ services:
     volumes:
       - ./:/app
     ports:
-      - 1488:8890
+      - 8895:8890
     environment:
       - MLFLOW_TRACKING_URI=http://158.160.2.37:5000/
       - DEFAULT_RUN_ID=${DEFAULT_RUN_ID}
-    command: uvicorn main:app --host 0.0.0.0 --port 8890
+    command: uvicorn main:app --host 0.0.0.0 --port 8890 --reload
